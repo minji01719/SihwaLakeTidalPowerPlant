@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시화호조력발전소</title>
+
+   <!-- 모바일 환경에 맞게 화면을 구축해준다. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- AOS 불러오기 -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<!-- 폰트어썸 불러오기 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<!-- 테일윈드 불러오기 -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- 스와이퍼 불러오기 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+<body>
+ 
+<!-- 탑바 -->
+<header class="top-bar h-[100px]">
+	<div class="inner flex h-full">
+		<div class="logo-box">
+			<a href="#" class="h-full flex items-center">
+				<img src="https://ifh.cc/g/h7ASd8.png" alt="로고이미지">
+				<img src="https://www.kwater.or.kr/website/images/tlight/layout/logo.png" alt="hover로고이미지">
+			</a>
+		</div>
+		<nav class="top-bar__menu-1">
+			<ul class="flex">
+				<li>
+					<a href="#">발전소소개</a>
+					<ul>
+						<li><a href="#">인사말</a></li>
+						<li><a href="#">연혁</a></li>
+						<li><a href="#">시화나래 BI소개</a></li>
+						<li><a href="#">발전사업 소개</a></li>
+						<li><a href="#">조력발전 원리&시설소개</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">문화관&전망대 소개</a>
+					<ul>
+						<li><a href="#">문화관</a></li>
+						<li><a href="#">다목적강당</a></li>
+						<li><a href="#">달전망대</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">부대시설</a>
+					<ul>
+						<li><a href="#">시화나래 조력공원</a></li>
+						<li><a href="#">시화나래 휴게소</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">알림마당</a>
+					<ul>
+						<li><a href="#">새소식</a></li>
+						<li><a href="#">주간운영계획</a></li>
+						<li><a href="#">홍보자료</a></li>
+						<li><a href="#">포토갤러리</a></li>
+						<li><a href="#">오시는길&주변관광</a></li>
+						<li><a href="#">사이트맵</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="list-icon h-full flex items-center">
+			<a href="#">
+				<span><i class="fa-solid fa-bars-staggered"></i></span>
+			</a>
+		</div>
+	</div>
+</header>
+
+<!-- 히든 메뉴 -->
+<div class="hidden-menu-box">
+	<div class="hidden-menu">
+		<div class="menu-box">
+			<div class="full-menu flex">
+				<div class="full-text">
+					<a href="#">전체메뉴</a>
+				</div>
+				<div class="full-close ml-auto">
+					<span><i class="fa-solid fa-xmark"></i></span>
+				</div>
+			</div>
+			<div class="hidden-menu-notice">
+				<a href="#">
+					<span><i class="fa-solid fa-volume-high"></i></span>
+					조력문화관 휴관중입니다!
+				</a>
+			</div>
+			<ul class="hidden-menu-1">
+				<li>
+					<a href="#">
+						발전소소개
+						<span></span>
+					</a>
+					<ul class="hidden-menu-2">
+						<li><a href="#">인사말</a></li>
+						<li><a href="#">연혁</a></li>
+						<li><a href="#">시화나래 BI소개</a></li>
+						<li><a href="#">발전사업 소개</a></li>
+						<li><a href="#">조력발전 원리&시설소개</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+						문화관&전망대 소개
+						<span></span>
+					</a>
+					<ul class="hidden-menu-2">
+						<li><a href="#">문화관</a></li>
+						<li><a href="#">다목적강당</a></li>
+						<li><a href="#">달전망대</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+						부대시설
+						<span></span>
+					</a>
+					<ul class="hidden-menu-2">
+						<li><a href="#">시화나래 조력공원</a></li>
+						<li><a href="#">시화나래 휴게소</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+						알림마당
+						<span></span>
+					</a>
+					<ul class="hidden-menu-2">
+						<li><a href="#">새소식</a></li>
+						<li><a href="#">주간운영계획</a></li>
+						<li><a href="#">홍보자료</a></li>
+						<li><a href="#">포토갤러리</a></li>
+						<li><a href="#">오시는길&주변관광</a></li>
+						<li><a href="#">사이트맵</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="floating">
+	<button class="top">
+		<img src="https://hi-caresolution.com/img/common/top.png" alt="위로">
+	</button>
+</div>
+
+<!-- 매인배너구현 -->
+<section class="main-banner">
+	<div class="main-banner-wrap">
+		<div class="text-wrap">
+			<span data-aos="fade-up" data-aos-duration="1500">K-water</span>
+			<p data-aos="fade-up" data-aos-duration="1500">청정, 무한, 재생 가능한 해양에너지</p>
+			<h2 data-aos="fade-up" data-aos-duration="1500">시화호조력발전소</h2>
+		</div>
+		<div data-aos="fade-up" data-aos-duration="1500">
+			<div class="information-wrap">
+				<div class="notice">
+					<ul>
+						<li>
+							<a href="#">
+								<span><i class="fa-solid fa-volume-high"></i></span>
+								조력문화관 휴관중입니다!
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="information">
+					<ul class="flex">
+						<li class="plan">
+							<a href="#">
+								<span><i class="fa-solid fa-calendar-days"></i></span>
+								주간운영계획
+							</a>
+						</li>
+						<li class="deadline">
+							<a href="#" class="flex">
+								<span><i class="fa-solid fa-stopwatch"></i></span>
+								입장마감
+								<p>오후 7시 30분</p>
+							</a>
+						</li>
+						<li class="time">
+							<a href="#" class="flex">
+								<span><i class="fa-solid fa-clock"></i></span>
+								관람시간
+								<p>오전 10시 - 오후 8시(연중무휴)</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="main-banner_blank"></div>
+		<div class="main-banner-img">
+			<img src="https://ifh.cc/g/q4oPky.jpg" alt="메인배너">
+		</div>
+	</div>
+</section>
+
+<!-- 배너1 -->
+<div class="main-banner-1">
+	<div class="banner-1__text-box">
+		<span data-aos="fade-up" data-aos-duration="1500">K-water</span>
+		<h1 data-aos="fade-up" data-aos-duration="1500">시화호조력발전 원리</h1>
+		<p data-aos="fade-up" data-aos-duration="1500">
+			하루 두 번 밀물과 썰물 때 발생하는 외해와 내해의 수위치를 이용하여
+			수차발전기로 전기를 생산하는 발전 방식을 조력발전이라고 합니다.
+		</p>
+		<a href="#" data-aos="fade-up" data-aos-duration="1500">
+			자세히보기
+		</a>
+	</div>
+</div>
+
+<!-- 메인배너2 -->
+<div class="main-banner-2">
+	<div class="banner-2_wrap">
+		<div class="banner-2__text-box">
+			<span data-aos="fade-right" data-aos-duration="1500">K-water</span>
+			<h1 data-aos="fade-right" data-aos-duration="1500">
+				시화의 역사와 문화,
+				<br>
+				그리고 자연을 아우르는 열린문화관
+			</h1>
+			<p data-aos="fade-right" data-aos-duration="1500">
+				에너지 메카로서의 무한성장을 발산하는 시화호조력발전소와
+				<br>
+				시화호의 역사적 상징, 지리적 특수성, 시민의 문화공간으로
+				자리하는
+				<br>
+				시화조력문화관에서 여러분을 기다립니다.
+			</p>
+			<a href="#" data-aos="fade-right" data-aos-duration="1500">
+				자세히보기
+			</a>
+		</div>
+		<div class="banner-2__img-box" data-aos="fade-left" data-aos-duration="1500">
+			<div class="main-img">
+				<a href="#">
+					<img src="https://ifh.cc/g/MnAmpQ.jpg" alt="항공뷰">
+				</a>
+			</div>
+			<div class="side-img">
+				<a href="#">
+					<img src="https://ifh.cc/g/MnAmpQ.jpg" alt="항공뷰">
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 메인배너3 -->
+<div class="main-banner-3">
+	<div class="banner-3_wrap">
+
+		<div class="tidal-park">
+			<div class="banner-3_img-box">
+				<a href="#">
+					<img src="https://ifh.cc/g/VdSf30.jpg" alt="시화호조력발전소">
+				</a>
+			</div>
+			<div class="banner-3_blank banner-3_blank-1"></div>
+			<div class="banner-3_text-box banner-3_text-box-1">
+				<h1 data-aos="fade-right" data-aos-duration="1500">시화나래 조력공원</h1>
+				<p data-aos="fade-right" data-aos-duration="1500">
+					바닷물(Tide)을 이용하여 만든
+					<br>
+					빛(Light)을 상징하는 의미
+				</p>
+				<div class="click" data-aos="fade-right" data-aos-duration="1500">
+					<p>click</p>
+					<span><i class="fa-solid fa-computer-mouse"></i> </span>
+				</div>
+				<div class="dip-button">
+					<a href="#">
+						자세히보기
+					</a>
+				</div>
+			</div>
+			<div class="content-box">
+				<div class="content-box-wrap">
+					<div class="top-text" data-aos="fade-left" data-aos-duration="1500">
+						<span>
+							시화의 역사와 문화,
+							<br>
+							그리고 자연을 아우르는 열린문화관
+						</span>
+						<h2>시화나래 조력 문화관</h2>
+					</div>
+					<div class="bottom-text" data-aos="fade-left" data-aos-duration="1500">
+						<ul>
+							<li class="flex">
+								<a href="#">
+									<p>History</p>
+								</a>
+								<span>“지역의 역사가 있고”</span>
+							</li>
+							<li class="flex">
+								<a href="#">
+									<p>Nature</p>
+								</a>
+								<span>“지역의 푸른 자연을 위한”</span>
+							</li>
+							<li class="flex">
+								<a href="#">
+									<p>Energy</p>
+								</a>
+								<span>“친환경에너지로 자연과 인간이 공존한”</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="rest-park">
+			<div class="banner-3_img-box">
+				<a href="#">
+					<img src="https://ifh.cc/g/mPPG2n.jpg" alt="공원휴게소배너">
+				</a>
+			</div>
+			<div class="banner-3_blank banner-3_blank-2"></div>
+			<div class="banner-3_text-box banner-3_text-box-2">
+				<h1 data-aos="fade-right" data-aos-duration="1500">공원 휴게소</h1>
+				<p data-aos="fade-right" data-aos-duration="1500">
+					바닷물을 이용하여 만든 빛을
+					<br>
+					상징하는 친환경 해상공원
+				</p>
+				<div class="click" data-aos="fade-right" data-aos-duration="1500">
+					<p>click</p>
+					<span><i class="fa-solid fa-computer-mouse"></i> </span>
+				</div>
+				<div class="dip-button">
+					<a href="#">
+						자세히보기
+					</a>
+				</div>
+			</div>
+			<div class="content-box">
+				<div class="content-box-wrap" data-aos="fade-left" data-aos-duration="1500">
+					<span> 휴식, 편의를 위한</span>
+					<h2>시화나래 휴게공원</h2>
+					<p>
+						서해바다의 물결과 신재생에너지의 순환을
+						주제로 조력발전소 건설과정에서 발생한
+						토사를 이용하여 친환경적으로 조성된 해상
+						공원입니다.
+						공원은 크게 여가공간, 휴식공간, 편의공간으로
+						이루어져 있어 다양한 즐거움을 느낄 수 있습니다.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="view-moon">
+			<div class="banner-3_img-box">
+				<a href="#">
+					<img src="https://ifh.cc/g/sPHaVz.jpg" alt="달전망대배너">
+				</a>
+			</div>
+			<div class="banner-3_blank banner-3_blank-3"></div>
+			<div class="banner-3_text-box banner-3_text-box-3">
+				<h1 data-aos="fade-right" data-aos-duration="1500">달 전망대</h1>
+				<p data-aos="fade-right" data-aos-duration="1500">
+					시화호와 서해를 조망할 수 있는
+					<br>
+					시화지역의 랜드마크
+				</p>
+				<div class="click" data-aos="fade-right" data-aos-duration="1500">
+					<p>click</p>
+					<span><i class="fa-solid fa-computer-mouse"></i> </span>
+				</div>
+				<div class="dip-button">
+					<a href="#">
+						자세히보기
+					</a>
+				</div>
+			</div>
+			<div class="content-box">
+				<div class="content-box-wrap" data-aos="fade-left" data-aos-duration="1500">
+					<span> 시화호와 서해를 조망할 수 있는</span>
+					<h2>달 전망대</h2>
+					<p>
+						전망대 타워층 관람 시간
+						<br>
+						매일 10:00~20:00 / 입장 마감 19:30
+						<br>
+						전망대 상업시설 운영 시간
+						<br>
+						1층 동이프레쉬 : 11:00 ~ 19:00 (월.화 휴무)
+						<br>
+						2층 카페동이 :  매일 11:00 ~ 19:00
+						<br>
+						망층 이루나카페 : 매일 10:00 ~ 20:00
+						<br>
+						* 휴무일 및 운영시간은 상황에따라 탄력적 운영
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 메인매너4(tourism) -->
+<div class="main-banner-4">
+	<div class="banner-4_wrap">
+
+		<div class="tourism-box">
+			<div class="tab-box__head">
+				<div class="tourism-text" data-aos="fade-down" data-aos-duration="1500">
+					<span>K-water</span>
+					<h1>주변 관광명소</h1>
+					<p>
+						시화호조력발전소 관람하시고 주변 관광명소도 함께 즐겨보세요.
+					</p>
+				</div>
+				<div class="tourism-button" data-aos="fade-down" data-aos-duration="1500">
+					<ul class="flex">
+						<li data-tb-clicked data-tb="tab-box-1__1__head">
+							<a class="cursor-pointer">안산 9경</a>
+						</li>
+						<li data-tb-clicked data-tb="tab-box-1__2__head">
+							<a class="cursor-pointer">안산 축제</a>
+						</li>
+						<li data-tb-clicked data-tb="tab-box-1__3__head">
+							<a class="cursor-pointer">문화관광</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="tab-box__body" data-aos="fade-up" data-aos-duration="1500">
+				<ul>
+					<li data-tb="tab-box-1__1__body">
+						<div class="ansan-tourism-img">
+							<div class="swiper swiper-1">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/V4wOm1.jpg" alt="시화호조력발전소"></a>
+										<p>시화호조력발전소</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/T787sB.jpg" alt="대부해솔길"></a>
+										<p>대부도해솔길</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"> <img src="https://ifh.cc/g/Smyl3P.jpg" alt="구봉도"></a>
+										<p>구봉도</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/d7lNDr.jpg" alt="탄도항"></a>
+										<p>탄도항</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/NzRHZ5.jpg" alt="풍도"></a>
+										<p>풍도</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/ppr27j.jpg" alt="동주염전"></a>
+										<p>동주염전</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/GSMp1V.jpg" alt="갈대습지"></a>
+										<p>갈대습지공원</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/26NLQb.jpg" alt="다문화거리"></a>
+										<p>다문화거리</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/xMgpPD.jpg" alt="노적봉공원"></a>
+										<p>노적봉공원</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-tb="tab-box-1__2__body">
+						<div class="ansan-festival-img">
+							<div class="swiper swiper-2">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/bqovBf.jpg" alt="국제 거리극축제"></a>
+										<p>국제 거리극축제</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/NAxv3z.jpg" alt="세계인의 날 축제"></a>
+										<p>세계인의 날 축제</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"> <img src="https://ifh.cc/g/vvjOHj.jpg" alt="별망성예술제"></a>
+										<p>별망성예술제</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"> <img src="https://ifh.cc/g/AZYT8j.jpg" alt="단원미술제"></a>
+										<p>단원미술제</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"> <img src="https://ifh.cc/g/XaFVRm.jpg" alt="성호문화제"></a>
+										<p>성호문화제</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"> <img src="https://ifh.cc/g/4rJQ1w.jpg" alt="대부포도축제"></a>
+										<p>대부포도축제</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-tb="tab-box-1__3__body">
+						<div class="cultural-tourism-img">
+							<div class="swiper swiper-3">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/vmGJdq.jpg" alt="성호박물관"></a>
+										<p>성호박물관</p>
+									</div>
+
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/4q1RhJ.jpg" alt="최용신기념관"></a>
+										<p>최용신기념관</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/BfH8g7.jpg" alt="안산문화예술의전당"></a>
+										<p>안산문화예술의전당</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/hVsJ5S.jpg" alt="안산문화원"></a>
+										<p>안산문화원</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/OOQ18V.jpg" alt="경기도미술관"></a>
+										<p>경기도미술관</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/PFmWmw.jpg" alt="김홍도미술관"></a>
+										<p>김홍도미술관</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/jvsG3m.jpg" alt="종이미술관"></a>
+										<p>종이미술관</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/zONgjX.jpg" alt="안산어촌민속박물관"></a>
+										<p>안산어촌민속박물관</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/PdhBxH.jpg" alt="안산산업역사박물관"></a>
+										<p>안산산업역사박물관</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/tgxwDt.jpg" alt="별망어촌문화관"></a>
+										<p>별망어촌문화관</p>
+									</div>
+									<div class="swiper-slide">
+										<a href="#"><img src="https://ifh.cc/g/lnJfYw.jpg" alt="수암마을전시관"></a>
+										<p>수암마을전시관</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="slide-box">
+					<div class="swiper-pagination-box">
+						<div class="swiper-pagination"></div>
+					</div>
+					<div class="swiper-button-group">
+						<div class="swiper-button swiper-button__prev">
+							<span><i class="fa-solid fa-angle-left"></i></span>
+						</div>
+						<div class="swiper-button swiper-button__next">
+							<span><i class="fa-solid fa-angle-right"></i></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 메인매너5(포토갤러리+지도) -->
+<div class="main-banner-5">
+	<div class="photo-gallery-box">
+		<div class="photo-gallery-text flex">
+			<a href="#">
+				<h1 data-aos="fade-right" data-aos-duration="1500">포토갤러리</h1>
+				<p data-aos="fade-right" data-aos-duration="1500">시화호조력발전소 다양한 이야기 둘러보세요.</p>
+			</a>
+			<span><i class="fa-solid fa-plus"></i></span>
+		</div>
+		<div class="photo-gallery-img-box flex" data-aos="fade-up" data-aos-duration="1500">
+			<div class="photo-gallery-1">
+				<a href="#"><img src="https://ifh.cc/g/wlZDqL.jpg" alt="30주년"></a>
+				<span>2024-07-29</span>
+				<p>
+					(시화호 30주년 기념)
+					<br>
+					시화호,
+					<br>
+					자연과 사람을 이어온 30년의 기적!
+				</p>
+			</div>
+			<div class="photo-gallery-2">
+				<a href="#"><img src="https://ifh.cc/g/6f0CMd.jpg" alt="사회공헌행사"></a>
+				<span>2024-07-01</span>
+				<p>
+					(사회공헌행사)
+					<br>
+					K-water 시화조력관리단,
+					<br>
+					안산시 다문화가족에 원터치 모기장 '지원'
+				</p>
+			</div>
+			<div class="photo-gallery-3">
+				<a href="#"><img src="https://ifh.cc/g/BZ6jFx.jpg" alt="시화나래공원야경"></a>
+				<span>2024-05-20</span>
+				<p>
+					(현장스케치)
+					<br>
+					시화나래공원 야경
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- maps(오시는길) -->
+	<div class="maps-box">
+		<div class="maps-box-text">
+			<h1 data-aos="fade-right" data-aos-duration="1500">오시는 길</h1>
+		</div>
+		<div class="maps-content-box">
+			<div class="maps-iframe" data-aos="fade-right" data-aos-duration="1500">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12692.988151259542!2d126.6103114!3d37.3129756!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b75793587bc79%3A0xf9ef0368588120a7!2z7Iuc7ZmU7Zi4IOyhsOugpeuwnOyghOyGjA!5e0!3m2!1sko!2skr!4v1728569417801!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+			<div class="maps-text-box">
+				<div class="text-top">
+					<div class="location flex" data-aos="fade-left" data-aos-duration="1500">
+						<span><i class="fa-solid fa-location-dot"></i></span>
+						<h2>위치</h2>
+						<p>
+							경기도 안산시 단원구 대부황금로 1927, K-water 시화조력관리단
+						</p>
+					</div>
+					<div class="number flex" data-aos="fade-left" data-aos-duration="1500">
+						<span><i class="fa-solid fa-phone"></i></span>
+						<h2>전화</h2>
+						<p>032-890-6520 / 032-890-6505</p>
+					</div>
+				</div>
+				<div class="text-bottom" data-aos="fade-left" data-aos-duration="1500">
+					<div class="car flex">
+						<div class="car-icon ">
+							<span><i class="fa-solid fa-car"></i></span>
+						</div>
+						<div class="car-text">
+							<h2>자가용 이용안내</h2>
+							<p>
+								네비게이션 검색어 : 시화나래 휴게소, “조력문화관”, “달 전망대”, “시화 달전망대”, “시화이루나타워”
+							</p>
+						</div>
+					</div>
+					<div class="bus flex">
+						<div class="bus-icon">
+							<span><i class="fa-solid fa-bus"></i></span>
+						</div>
+						<div class="bus-text">
+							<h2>대중교통 이용안내</h2>
+							<p>
+								123번 버스 / 300번 버스
+							</p>
+						</div>
+					</div>
+
+				</div>
+				<div class="button" data-aos="fade-left" data-aos-duration="1500">
+					<div class="more-button">
+						<a href="#" class="flex"><span><i class="fa-solid fa-map-location-dot"></i></span>
+							<p>자세히보기</p>
+						</a>
+					</div>
+					<div class="print-button">
+						<a href="#" class="flex">
+							<span><i class="fa-solid fa-print"></i></span>
+							<p>인쇄하기</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- footer -->
+<footer class="footer">
+	<div class="footer-wrap">
+		<ul class="pc_relate_site">
+			<li>
+				<a href="#">관련사이트</a>
+			</li>
+			<li>
+				<a href="https://www.kwater.or.kr/website/songsan.do">
+					송산그린시티
+				</a>
+			</li>
+			<li>
+				<a href="https://www.sihwalake.net">
+					시화호환경학교
+				</a>
+			</li>
+			<li>
+				<a href="https://www.kwater.or.kr/website/sihwanet.do">
+					시화지구지속가능발전협의회
+				</a>
+			</li>
+		</ul>
+		<div class="address">
+			<span>K-water 시화나래조력문화관</span>
+			<p>경기도 안산시 단원구 대부황금로 1927(대부동동2098)</p>
+			<p class="black-text">
+				<span>시화호 조력발전소 : 032-890-6520</span>
+				<span>시화나래휴게소 : 032-880-7000</span>
+				<span> 달 전망대 : 070-4114-0101</span>
+				<span>당직실 : 032-890-6505, 010-9450-6550</span>
+				<span style="color:red;">조력문화관(휴관중) : 032-885-7530</span>
+			</p>
+		</div>
+		<div class="copyright">
+			<span>Copyright ⓒ K-water. All Rights Reserved.</span>
+		</div>
+	</div>
+</footer>
+
+<!-- 야경배너 보류
+https://ifh.cc/g/3Kq5BK.jpg -->
+</body>
+</html>
